@@ -1,0 +1,169 @@
+/*Testes de tutorial*/
+.teste1 {
+    background-color: #4CAF50;
+    width: 250px;
+    height: 150px;
+    right: 10%;
+    top: 10%;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(193, 208, 228);
+}
+.teste2{
+    background-color: #c57d1e;
+    border-radius: 20px;
+    width: 250px;
+    height: 100px;
+    left: 25%;
+    bottom: 5%;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(193, 208, 228);
+    transition: .5s;
+    cursor: pointer;
+}
+.teste2:hover{
+    background-color: #a15f09;
+}
+
+.teste3 {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 26%;
+    top: 22%;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #007bff; /* Cor do triângulo */
+    transform: rotate(20deg);
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    background-color: rgb(193, 208, 228);
+}
+
+#overlayButton{
+    background-color: #133266;
+    color: rgb(193, 208, 228);
+    cursor: pointer;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 30pt;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1000;
+}
+
+.highlight {
+    position: absolute;
+    border: 3px solid rgb(43, 75, 131);
+    border-radius: 20px;
+    z-index: 1001;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.7);
+}
+
+.titleOver {
+    position: absolute;
+    top: 0; /* Colar no topo do .overlay-content */
+    width: 100%;
+    background-color: #133266;
+    border-radius: 10px 10px 0 0;
+    color: aliceblue;
+    display: flex;
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    height: 60px; /* Definir uma altura fixa maior para centralização */
+}
+
+.titleOverTitle {
+    margin-top: 5%;
+}
+
+.overlay-content {
+    position: relative;
+    background-color: rgb(43, 75, 131);
+    border-radius: 10px;
+    z-index: 1002;
+    text-align: center;
+    max-width: 400px;
+    pointer-events: auto;
+    font-family: Arial, sans-serif;
+    padding-top: 3.5%; /* Aumentar o espaço abaixo do título */
+}
+
+.overlay-content p {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-bottom: 25px;
+    padding: 0 20px;
+}
+
+#nextStepButton {
+    cursor: pointer;
+    width: 100%;
+    background-color: #4CAF50; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 0 0 10px 10px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Efeito de transição */
+}
+
+#nextStepButton:hover {
+    background-color: #45a049; /* Cor ao passar o mouse */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+}
+
+.arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 40px solid rgb(82, 115, 172); /* Cor da seta */
+    z-index: 1002;
+}
